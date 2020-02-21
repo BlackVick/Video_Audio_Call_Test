@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="15dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textColor="@color/black"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/quicksand_bold"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/quicksand_regular"
+            android:hint="Email"
+            android:background="@drawable/edit_ring"
+            android:padding="10dp"
+            android:inputType="textEmailAddress"
+            android:id="@+id/loginEmail"
+            android:layout_marginTop="50dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="10"
+            android:animateLayoutChanges="true"
+            android:layout_marginTop="20dp">
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_weight="8.8"
+                android:layout_height="wrap_content"
+                android:textStyle="normal"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/quicksand_regular"
+                android:hint="Key"
+                android:background="@drawable/edit_ring"
+                android:padding="10dp"
+                android:inputType="textPassword"
+                android:id="@+id/loginPassword"/>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_weight="1.2"
+                android:padding="3dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_show_password"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:id="@+id/loginPasswordVisibility"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reset Password"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:gravity="end"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/quicksand_bold"
+            android:id="@+id/resetPassword"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/buttons"
+            android:animateLayoutChanges="true"
+            android:layout_marginTop="50dp"
+            android:id="@+id/loginButton">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="LOGIN"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/grey"
+                android:fontFamily="@font/quicksand_bold"
+                android:gravity="center"
+                android:id="@+id/loginText"/>
+
+            <ProgressBar
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:theme="@style/ProgressTheme"
+                android:layout_centerInParent="true"
+                android:id="@+id/loginProgress"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

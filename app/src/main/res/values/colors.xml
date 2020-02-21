@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#E3E344</color>
+    <color name="colorAccent">#868600</color>
+    <color name="boldTextColor">#0f1341</color>
+    <color name="white">#FFFFFF</color>
+    <color name="offWhite">#EEEEEE</color>
+    <color name="transparentWhite">#B2FFFFFF</color>
+    <color name="transparentBlack">#4D000000</color>
+    <color name="black">#000000</color>
+    <color name="offBlack">#181717</color>
+    <color name="grey">#5E5E5E</color>
+    <color name="fadeGrey">#925E5E5E</color>
+    <color name="green">#3FBD43</color>
+    <color name="transparent">#00000000</color>
+    <color name="surveyColor">#2196F3</color>
+    <color name="referralColor">#209773</color>
+    <color name="bankColor">#009688</color>
+    <color name="taskColor">#ff4800</color>
+    <color name="earningsColor">#E91E63</color>
+    <color name="goldBrown">#C9A00C</color>
+    <color name="darkRed">#b22222</color>
+</resources>
