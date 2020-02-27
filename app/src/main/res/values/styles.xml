@@ -24,6 +24,18 @@
         <item name="android:windowContentOverlay">@null</item>
     </style>
 
+    <!--  CALL THEME -->
+    <style name="IncomingCallTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/splash</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
     <!--  IMAGE VIEW THEME  -->
     <style name="ImageViewTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/black</item>

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Video &amp; Audio Call Test</string>
+    <string name="permissions_needed">Camera and Microphone permissions needed. Please allow in App Settings for additional functionality.</string>
 </resources>

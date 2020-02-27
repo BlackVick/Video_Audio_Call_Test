@@ -49,7 +49,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
 
-    /*---   ANDROID LIBRARIES   ---*/
+    //android libraries
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'com.google.android.material:material:1.0.0'
@@ -63,20 +63,27 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
 
 
-    /*---   FIREBASE   ---*/
+    //firebase
     implementation 'com.google.firebase:firebase-messaging:20.1.0'
     implementation 'com.google.firebase:firebase-inappmessaging-display:19.0.3'
     implementation 'com.google.firebase:firebase-analytics:17.2.2'
     implementation 'com.google.firebase:firebase-crashlytics:17.0.0-beta01'
     implementation 'com.google.firebase:firebase-auth:19.2.0'
     implementation 'com.google.firebase:firebase-firestore:21.4.0'
+    implementation 'com.google.firebase:firebase-functions:19.0.2'
+    implementation 'com.google.firebase:firebase-database:19.2.1'
 
 
-    /*---   GOOGLE   ---*/
+    //permission
     implementation 'com.karumi:dexter:5.0.0'
 
 
-    /*---   EXTERNAL WIDGET LIBRARIES   ---*/
+    //image
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+
+
+    //external widget libraries
     implementation 'com.jaredrummler:material-spinner:1.1.0'
     implementation 'com.rengwuxian.materialedittext:library:2.1.4'
     implementation 'com.github.d-max:spots-dialog:0.7@aar'
@@ -85,25 +92,30 @@ dependencies {
     implementation 'com.wrapp.floatlabelededittext:library:0.0.6'
 
 
-    /*---   DATABASE LIBRARIES   ---*/
+    //database
     implementation 'io.paperdb:paperdb:2.1'
 
 
-    /*---   TWILIO   ---*/
+    //twilio
     implementation 'com.twilio:video-android:5.1.1'
 
 
-    /*--- DATA CONTROLLERS   ---*/
+    //data controllers
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
     implementation 'com.github.ralphpina:Android-Permissions-Manager:v2.0.1'
     implementation 'com.squareup.okhttp:okhttp:2.7.5'
+    implementation "com.squareup.retrofit2:converter-jackson:2.0.0-beta4"
+    implementation "com.squareup.okhttp3:logging-interceptor:3.6.0"
+    implementation "com.koushikdutta.ion:ion:2.1.8"
 
-    /*---   ANIMATIONS   ---*/
+
+    //animations
     implementation 'com.daimajia.easing:library:2.0@aar'
     implementation 'com.daimajia.androidanimations:library:2.3@aar'
 
-    /*---   NO IDEA WHY YOU ARE HERE   ---*/
+
+    //google guava dependency fix
     implementation 'com.google.guava:guava:27.0.1-android'
 
 

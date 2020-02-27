@@ -22,13 +22,22 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.videoaudiocalltest.Models.User;
+import com.android.videoaudiocalltest.Notification.FCMHelper;
 import com.android.videoaudiocalltest.R;
 import com.android.videoaudiocalltest.Util.CheckInternet;
 import com.android.videoaudiocalltest.Util.Common;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Login extends AppCompatActivity {
 
@@ -42,6 +51,7 @@ public class Login extends AppCompatActivity {
 
     //firebase
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    private FirebaseInstanceId firebaseInstanceId = FirebaseInstanceId.getInstance();
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private DocumentReference userRef;
 
@@ -143,13 +153,13 @@ public class Login extends AppCompatActivity {
 
                 }
 
-                if (output == 1){
+                if (output == 0){
 
                     Toast.makeText(this, "No internet access", Toast.LENGTH_SHORT).show();
 
                 }
 
-                if (output == 1){
+                if (output == 2){
 
                     Toast.makeText(this, "No network access", Toast.LENGTH_LONG).show();
 
@@ -177,12 +187,20 @@ public class Login extends AppCompatActivity {
             loginEmail.requestFocus();
             loginEmail.setError("Invalid");
 
+            //unlock widget
+            loginButton.setEnabled(true);
+            resetPassword.setEnabled(true);
+
         } else
 
         if (TextUtils.isEmpty(thePass)){
 
             loginPassword.requestFocus();
             loginPassword.setError("Required");
+
+            //unlock widget
+            loginButton.setEnabled(true);
+            resetPassword.setEnabled(true);
 
         } else {
 
@@ -215,7 +233,7 @@ public class Login extends AppCompatActivity {
                                     resetPassword.setEnabled(true);
 
                                     //error
-                                    Toast.makeText(this, "Access denied", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(this, "User not yet in database", Toast.LENGTH_LONG).show();
 
                                 }
 
@@ -452,6 +470,27 @@ public class Login extends AppCompatActivity {
             //write to local db
             Paper.book().write(Common.USER_ID, theUser.getUser_id());
             Paper.book().write(Common.PAPER_USER, theUser);
+
+            //enable fcm id
+            FCMHelper fcmHelper = new FCMHelper();
+            fcmHelper.enableFCM();
+
+            //firebase messaging instance
+            firebaseInstanceId.getInstanceId().addOnSuccessListener( Login.this, instanceIdResult -> {
+
+                //get token
+                String newToken = instanceIdResult.getToken();
+
+                //send to firebase database
+                Map<String, Object> newFcmIdMap = new HashMap<>();
+                newFcmIdMap.put("fcm_token", newToken);
+                FirebaseFirestore db = FirebaseFirestore.getInstance();
+                DocumentReference userRef = db.collection(Common.USER_NODE)
+                        .document(theUser.getUser_id());
+                userRef.update(newFcmIdMap);
+
+            });
+
 
             Intent homeIntent = new Intent(Login.this, Home.class);
             homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
