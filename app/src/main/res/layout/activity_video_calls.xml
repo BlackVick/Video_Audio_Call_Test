@@ -17,7 +17,7 @@
         android:layout_width="96dp"
         android:layout_height="96dp"
         android:layout_margin="16dp"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@+id/buttonsLay"
         android:layout_alignParentStart="true"/>
 
     <com.twilio.video.VideoView
@@ -64,7 +64,8 @@
         android:orientation="horizontal"
         android:weightSum="4"
         android:gravity="center"
-        android:animateLayoutChanges="true">
+        android:animateLayoutChanges="true"
+        android:id="@+id/buttonsLay">
 
         <RelativeLayout
             android:layout_width="0dp"

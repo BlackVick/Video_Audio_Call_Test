@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "568622159860",
+    "firebase_url": "https://videoaudiocall-test.firebaseio.com",
+    "project_id": "videoaudiocall-test",
+    "storage_bucket": "videoaudiocall-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568622159860:android:38fbeee9908dc6e60a8ba1",
+        "android_client_info": {
+          "package_name": "com.android.videoaudiocalltest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "568622159860-dllitfvh57197asr6ivp8r4kfqfagum1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.videoaudiocalltest",
+            "certificate_hash": "8e33fc5d84626c0a15d5d2330f901675318d9f9e"
+          }
+        },
+        {
+          "client_id": "568622159860-6dh26b2nlf7ec7cadq5tb7msg3or36no.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.videoaudiocalltest",
+            "certificate_hash": "69ff8f06e4f1fc995f802febb64b8338f8401044"
+          }
+        },
+        {
+          "client_id": "568622159860-fu0021qgo18amgd99al1mv2mgrn6ogpv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8HnGGx9gJWHNfozIluDWNsgxOKPynmaI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "568622159860-fu0021qgo18amgd99al1mv2mgrn6ogpv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

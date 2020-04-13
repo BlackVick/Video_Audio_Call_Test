@@ -8,9 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.videoaudiocalltest.Calls.VideoCalls;
-import com.android.videoaudiocalltest.Calls.VoiceCalls;
 import com.android.videoaudiocalltest.Models.User;
 import com.android.videoaudiocalltest.R;
 import com.android.videoaudiocalltest.Util.Common;
@@ -60,10 +60,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UsersViewHol
         //voice call
         holder.voiceCall.setOnClickListener(view -> {
 
-            Intent callIntent = new Intent(context, VoiceCalls.class);
-            callIntent.putExtra(Common.CALL_USER_INTENT, userId);
-            context.startActivity(callIntent);
-            activity.overridePendingTransition(R.anim.slide_left, R.anim.fade_out);
+            Toast.makeText(context, "Developing", Toast.LENGTH_SHORT).show();
 
         });
 
